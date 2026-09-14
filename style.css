@@ -1,7 +1,82 @@
-html, body {
-  margin: 0;
-  padding: 0;
+:root {
+  --color-bg: #69f7be;
+  --color-text-main: #000000;
+  --color-primary: #ffff00;
+  --color-heading: #2800ff;
+
+  --wrapper-height: 87vh;
+  --image-max-width: 300px;
+  --image-margin: 3rem;
+
+  --font-family: "Space Grotesk";
 }
-canvas {
-  display: block;
+
+/* Load the fonts from the fonts folder */
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("fonts/SpaceGrotesk-Regular.ttf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("fonts/SpaceGrotesk-Bold.ttf") format("truetype");
+  font-weight: bold;
+}
+
+/* Basic page styling */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding-top: 100px;
+  padding-bottom: 250px;
+  font-family: var(--font-family), sans-serif;
+  color: var(--color-text-main);
+  background-color: var(--color-bg);
+}
+
+/* Page structure */
+
+.wrapper {
+  min-height: var(--wrapper-height);
+  display: grid;
+  place-items: center;
+  margin: 0 1rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Title */
+
+.title {
+  color: var(--color-heading);
+  font-size: 100px;
+  line-height: 105%;
+  margin: 0;
+}
+
+/* Image */
+
+.illustration {
+  max-width: 100%;
+  max-height: var(--image-max-width);
+  margin-top: var(--image-margin);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+/* Interactive image */
+
+.dipped {
+  transform: translateY(5px);
 }
